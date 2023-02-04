@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get all active network interfaces
+interfaces=$(ifconfig | grep -Eo '^[a-zA-Z0-9]+')
+
+# Loop through each interface
+for interface in $interfaces
+do
+  # Get the IPv4 address of the interface
+  ip=$(ifconfig $interface | grep -Eo 'inet [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
+
+  # Print the interface and its IPv4 address
+  echo "$interface: $ip"
+done
+
