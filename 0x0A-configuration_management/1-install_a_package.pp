@@ -1,7 +1,7 @@
 # Installs puppet-lint, version 2.1.0
 #
 # package { 'python3-pip':
-  ensure => installed,
+  ensure => '2.1.0',
 }
 
 exec { 'install-flask':
