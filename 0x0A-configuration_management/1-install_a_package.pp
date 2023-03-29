@@ -1,7 +1,8 @@
 #install puppet-lint, version 2.1.0
 
 package { 'pupet-lint':
-  ensure => '2.1.0',,
+  ensure => '2.1.0',
+  provider => 'flask',
 }
 
 exec { 'install-flask':
