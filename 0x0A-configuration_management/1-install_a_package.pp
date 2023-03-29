@@ -1,14 +1,7 @@
-#install puppet-lint, version 2.1.0
+# Installs puppet-lint, version 2.1.0
 
-package { 'pupet-lint':
-  ensure => '2.1.0',
-  provider => 'flask',
+package { 'puppet-lint':
+  ensure   => '2.1.0',
+  provider => 'gem',
 }
-
-exec { 'install-flask':
-  command => '/usr/bin/pip3 install flask==2.1.0',
-  path => '/usr/local/bin:/usr/bin:/bin',
-  creates => '/usr/local/lib/puppet-lint/dist-packages/flask',
-}
-
 
